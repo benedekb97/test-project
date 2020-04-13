@@ -45,6 +45,8 @@ class LoginController extends Controller
                 }else{
                     $captcha = false;
                 }
+            }else{
+                $captcha = false;
             }
 
             return view('login', [
