@@ -10,7 +10,7 @@ class LoginController extends Controller
 {
     public function login(Request $request)
     {
-        $username = $request->input('username');
+        $username = strtolower($request->input('username'));
         $password = $request->input('password');
 
         $user = User::all()->where('username', $username)->first();
