@@ -28,7 +28,17 @@ class HomeController extends Controller
 
     public function admin(Request $request)
     {
-        return view('admin');
+        $groups = Auth::user()->groups;
+        $text = "";
+        foreach($groups as $group) {
+            $text .= $group->name . ", ";
+        }
+
+        $text = substr($text, 0, -2);
+
+        return view('admin',[
+            'groups' => $text
+        ]);
     }
 
 }
