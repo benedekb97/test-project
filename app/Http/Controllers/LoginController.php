@@ -31,8 +31,9 @@ class LoginController extends Controller
             'password' => $password
         ])) {
             $user->login_attempts = 0;
+            $user->last_login = date("Y-m-d H:i:s");
             $user->save();
-            return redirect()->route('index');
+            return redirect()->route('admin');
         } else {
 
             if($user) {
