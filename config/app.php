@@ -175,6 +175,13 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * ACL
+         */
+        Junges\ACL\ACLServiceProvider::class,
+        Junges\ACL\ACLAuthServiceProvider::class,
+        Junges\ACL\ACLEventsServiceProvider::class,
+
     ],
 
     /*
